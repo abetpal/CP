@@ -1,5 +1,5 @@
 //author: nobrakebicycle
-//created: 25.10.2021 19:20:53
+//created: 25.10.2021 19:42:16
 //Hello Traveller
 //आज रपट जायें तो हमें ना कहियो
 //कल फिसल जायें तो हमें ना उठइयो
@@ -12,20 +12,25 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    string s1, s2;
-    cin >> s1 >> s2;
-    if (s1 == s2)
+    int n;
+    cin >> n;
+    int min = 1000000000;
+    int max = 0;
+    int a[n];
+    for (int i = 0; i < n; i++)
     {
-        puts("-1");
+        cin >> a[i];
+        if (a[i] < min)
+            min = a[i];
+        if (a[i] > max)
+            max = a[i];
     }
-    else
+    int c = 0;
+    for (int i = 0; i < n; i++)
     {
-        int max1 = s1.length();
-        int max2 = s2.length();
-        if (max1 >= max2)
-            cout << max1;
-        else
-            cout << max2;
+        if (a[i] > min && a[i] < max)
+            c++;
     }
+    cout << c;
     return 0;
 }
