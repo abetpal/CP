@@ -1,5 +1,5 @@
 //author: nobrakebicycle
-//created: 26.10.2021 20:36:36
+//created: 26.10.2021 17:12:23
 //Hello Traveller
 //आज रपट जायें तो हमें ना कहियो
 //कल फिसल जायें तो हमें ना उठइयो
@@ -13,21 +13,28 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int n;
-    const int N = 100020;
-    int a[N] = {0};
     cin >> n;
-    int m = n;
-    for (int i = 0; i < n; i++)
+    int p;
+    cin >> p;
+    set<int> s;
+    for (int i = 0; i < p; i++)
     {
-        int p;
-        cin >> p;
-        a[p] = 1;
-        while (a[m] == 1)
-        {
-            printf("%d ", m);
-            m--;
-        }
-        printf("\n");
+        int a;
+        cin >> a;
+        s.insert(a);
     }
+    cin >> p;
+    for (int i = 0; i < p; i++)
+    {
+        int a;
+        cin >> a;
+        s.insert(a);
+    }
+    if (s.size() == n)
+    {
+        cout << "I become the guy.";
+    }
+    else
+        cout << "Oh, my keyboard!";
     return 0;
 }

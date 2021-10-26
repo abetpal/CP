@@ -1,5 +1,5 @@
 //author: nobrakebicycle
-//created: 26.10.2021 20:36:36
+//created: 26.10.2021 18:37:05
 //Hello Traveller
 //आज रपट जायें तो हमें ना कहियो
 //कल फिसल जायें तो हमें ना उठइयो
@@ -13,21 +13,32 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int n;
-    const int N = 100020;
-    int a[N] = {0};
     cin >> n;
-    int m = n;
+    int a[n][2];
     for (int i = 0; i < n; i++)
     {
-        int p;
-        cin >> p;
-        a[p] = 1;
-        while (a[m] == 1)
-        {
-            printf("%d ", m);
-            m--;
-        }
-        printf("\n");
+        cin >> a[i][0] >> a[i][1];
     }
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i][0] != a[i][1])
+        {
+            cout << "rated";
+            return 0;
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+
+            if (a[i][0] > a[j][0])
+            {
+                cout << "unrated";
+                return 0;
+            }
+        }
+    }
+    cout << "maybe";
     return 0;
 }
