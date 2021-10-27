@@ -1,3 +1,9 @@
+//Author-nobrakebicycle
+//Hello Traveller
+//आज रपट जायें तो हमें ना कहियो
+//कल फिसल जायें तो हमें ना उठइयो
+//Time and Space wait for none.(especially in programming, its just dilemma) ◉‿◉
+//Dher Mithai mein keeya padela
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
@@ -14,24 +20,30 @@ int main()
         if (i + 2 < s.length())
         {
             r = s.substr(i, 3);
-            cout << r << endl;
+            //cout << r << endl;
         }
 
         if (r == "WUB")
         {
             if (space == 0)
             {
-                cout << " ";
+                s = s.replace(i, 3, " ");
+                //cout << r << endl;
                 space++;
+                i += 1;
+                r = "";
             }
-            i += 3;
+            else
+            {
+                s = s.replace(i, 3, "");
+                r = "";
+            }
         }
         else
         {
             space = 0;
-            cout << s[i];
             i++;
         }
     }
-    cout << "\n";
+    cout << s << "\n";
 }
