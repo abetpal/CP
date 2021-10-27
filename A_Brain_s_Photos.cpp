@@ -44,7 +44,7 @@ int main()
             b++;
         }
     }
-    if (b + w == n * l)
+    if (b + w + g == n * l)
         cout << "#Black&White";
     else
         cout << "#Color";
