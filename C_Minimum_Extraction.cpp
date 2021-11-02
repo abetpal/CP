@@ -26,14 +26,14 @@ int main()
         sort(a, a + n);
         int maxx = a[0];
         int minn = a[0];
-        int sum = 0;
-        cout << minn << endl;
+        int sum = a[0];
+        //cout << maxx << endl;
         for (int i = 0; i < n - 1; i++)
         {
-            maxx = max(minn, a[i + 1] - minn - sum);
-            sum = sum + minn;
+            maxx = max(maxx, a[i + 1] - sum);
+            sum = sum + a[i + 1] - sum;
             minn = a[i + 1] - sum;
-            cout << minn << endl;
+            //cout << maxx << endl;
         }
         cout << maxx << "\n";
     }
