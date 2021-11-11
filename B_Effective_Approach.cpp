@@ -16,7 +16,6 @@ int main()
     cin.tie(NULL);
     int n, m, s1, s2, i, a[100021], b[100021], pos[100021];
     cin >> n;
-
     for (i = 0; i < n; i++)
     {
         cin >> a[i];
