@@ -19,58 +19,7 @@ int main()
     {
         int n, m;
         cin >> n >> m;
-        int ans = INT_MAX;
-        if ((n % 3) == 0)
-        {
-            int ans1 = (n / 3) * m;
-            ans = min(ans, ans1);
-        }
-        if ((n % 2) == 0)
-        {
-            int ans1 = (n / 2) * m;
-            ans = min(ans, ans1);
-        }
-        if ((n % 3) == 1)
-        {
-            int ans1 = ((n / 3) - 1) * m + 2 * m;
-            ans = min(ans, ans1);
-        }
-        if ((n % 3) == 2)
-        {
-            int ans1 = (n / 3) * m + m;
-            ans = min(ans, ans1);
-        }
-        if ((n % 3) % 2 == 0)
-        {
-            int ans1 = (n / 3) * m + m;
-            ans = min(ans, ans1);
-        }
-        if ((m % 3) == 0)
-        {
-            int ans1 = (m / 3) * n;
-            ans = min(ans, ans1);
-        }
-        if ((m % 2) == 0)
-        {
-            int ans1 = (m / 2) * n;
-            ans = min(ans, ans1);
-        }
-        if ((m % 3) % 2 == 0)
-        {
-            int ans1 = (m / 3) * n + n;
-            ans = min(ans, ans1);
-        }
-        if ((m % 3) == 1)
-        {
-            int ans1 = ((m / 3) - 1) * n + 2 * n;
-            ans = min(ans, ans1);
-        }
-        if ((m % 3) == 2)
-        {
-            int ans1 = (m / 3) * n + n;
-            ans = min(ans, ans1);
-        }
-        cout << ans << "\n";
+        cout << (n * m + 2) / 3 << '\n';
     }
     return 0;
 }
