@@ -20,7 +20,7 @@ int main()
         int n;
         cin >> n;
         int a[n];
-        vector<int> v;
+        deque<int> v;
         for (int i = 0; i < n; i++)
         {
             cin >> a[i];
@@ -44,7 +44,7 @@ int main()
             //cout << minn << "\n";
             if (maxx == left)
             {
-                v.insert(v.begin(), maxx);
+                v.push_front(maxx);
                 //cout << maxx << "a\n";
                 i++;
             }
