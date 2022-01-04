@@ -9,7 +9,6 @@
 #define ll long long
 #define lli long long int
 using namespace std;
-ll n, T;
 int main()
 {
     long long n, t;
