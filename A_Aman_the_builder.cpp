@@ -1,5 +1,5 @@
 // author: nobrakebicycle
-// created: 30.04.2022 14:13:24
+// created: 22.05.2022 21:01:35
 // Hello Traveller
 //  आज रपट जायें तो हमें ना कहियो
 //  कल फिसल जायें तो हमें ना उठइयो
@@ -17,6 +17,22 @@ int main()
     cin >> T;
     while (T--)
     {
+        int n;
+        cin >> n;
+        bool flag = false;
+        for (int i = 0; i <= (n) / 3; i++)
+        {
+            int x = 3 * i;
+            if ((n - x) % 7 == 0)
+            {
+                flag = true;
+            }
+        }
+
+        if (flag == true)
+            cout << "YES\n";
+        else
+            cout << "NO\n";
     }
     return 0;
 }
