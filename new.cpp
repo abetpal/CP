@@ -9,14 +9,83 @@
 #define ll long long
 #define lli long long int
 using namespace std;
+
+const int MAX = 104;
+
+int memo[MAX][MAX];
+
+int oSRec(vector<int> arr, int i, int j, int sum)
+{
+    if (j == i + 1)
+        return max(arr[i], arr[j]);
+
+    if (memo[i][j] != -1)
+        return memo[i][j];
+
+    memo[i][j] = max((sum - oSRec(arr, i + 1, j, sum - arr[i])),
+                     (sum - oSRec(arr, i, j - 1, sum - arr[j])));
+
+    return memo[i][j];
+}
+
+int optimalStrategyOfGame(vector<int> arr, int n)
+{
+    int sum = 0;
+    sum = accumulate(arr.begin(), arr.end(), sum);
+
+    memset(memo, -1, sizeof(memo));
+
+    return oSRec(arr, 0, n - 1, sum);
+}
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int T;
-    cin >> T;
-    while (T--)
+    string s, name;
+    getline(cin, s);
+    // cout << s;
+    cin >> name;
+    // cout << name;
+
+    char str[s.length()];
+
+    for (int i = 0; i < s.length(); i++)
     {
+        str[i] = s[i];
     }
-    return 0;
+
+    char *token = strtok(str, " ");
+    vector<int> tokens;
+
+    while (token != NULL)
+    {
+        int a = stoi(token);
+        tokens.push_back(a);
+        token = strtok(NULL, " ");
+    }
+
+    int sum1 = optimalStrategyOfGame(tokens, tokens.size());
+
+    int sum = 0;
+    sum = accumulate(tokens.begin(), tokens.end(), sum);
+
+    int sum2 = sum - sum1;
+
+    if (sum1 > sum2)
+    {
+        cout << name;
+    }
+
+    if (sum2 > sum1 && name == "alice")
+    {
+        cout << "bob";
+    }
+    if (sum2 > sum1 && name == "bob")
+    {
+        cout << "alice";
+    }
+
+    if (sum1 == sum2)
+
+    {
+        cout << "draw";
+    }
 }
